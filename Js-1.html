@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Javascript >>- Sikandar Bhide | Drum Kit |</title>
+    <style>
+        .back-1 {
+            position: fixed;
+            z-index: -8;
+            margin: -81px;
+            padding-left: 43px;
+            opacity: 0.87;
+
+        }
+
+        .keys {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            box-sizing: border-box;
+            opacity: 1.8;
+
+        }
+
+        .solid-1 {
+            margin-top: 12vh;
+        }
+
+        .key {
+            /* border: 4px solid black; ha color kasa ahi ekda bag  */
+            border: 3px solid #09dfd8f5;
+            border-radius: 11px;
+            margin: 1rem;
+            font-size: 1.5rem;
+            padding: 1rem 0.5rem;
+            transition: all 0.2s;
+            width: 100px;
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.4);
+            box-shadow: 1px 1px 10px 0px rgba(251, 253, 253, 0.47);
+            -webkit-box-shadow: -2px 1px 10px 0px rgba(251, 253, 253, 0.47);
+            -moz-box-shadow: 4px 1px 10px 0px rgba(251, 253, 253, 0.47);
+            ;
+
+            text-shadow: 0 0 5px #11fc02de;
+            opacity: 1.2;
+        }
+
+        .pop-1 {
+            width: 87%;
+            margin: auto;
+
+        }
+
+        .pop-2 {
+            width: 80%;
+            margin: auto;
+
+        }
+
+        .space-1 {
+            width: 55%;
+            margin: auto;
+            border-radius: 20px;
+            border: 1px solid aqua;
+            box-shadow: 2px 2px 10px rgb(0, 38, 255);
+
+        }
+
+        .playing {
+            transform: scale(1.2);
+            border-color: #0af551;
+            box-shadow: 0 0 10px #1b0bf8;
+            color: aqua;
+            text-emphasis-color: magenta;
+        }
+
+        kbd {
+            display: block;
+            font-size: 40px;
+
+        }
+
+        .tin-1 {
+            box-shadow: 2px 2px 20px 0px rgba(243, 8, 243, 0.56);
+            -webkit-box-shadow: 2px 2px 20px 0px rgba(243, 8, 243, 0.56);
+            -moz-box-shadow: 2px 2px 20px 0px rgba(243, 8, 243, 0.56);
+
+        }
+
+        .tin-2 {
+            box-shadow: 3px 2px 20px 0px rgba(60, 66, 248, 0.56);
+            -webkit-box-shadow: 3px 2px 20px 0px rgba(61, 67, 253, 0.56);
+            -moz-box-shadow: 3px 2px 20px 0px rgba(64, 70, 250, 0.56);
+        }
+
+        .tin-3 {
+            box-shadow: 1px 1px 20px 0px rgba(8, 243, 34, 0.56);
+            -webkit-box-shadow: 1px 1px 10px 0px rgba(8, 243, 34, 0.56);
+            -moz-box-shadow: 1px 1px 10px 0px rgba(8, 243, 34, 0.56);
+        }
+
+        .tin-4 {
+            box-shadow: 3px 3px 11px 0px rgba(248, 10, 236, 0.56);
+            -webkit-box-shadow: 3px 3px 11px 0px rgba(248, 10, 236, 0.56);
+            -moz-box-shadow: 3px 3px 11px 0px rgba(248, 10, 236, 0.56);
+        }
+
+        .tin-5 {
+            box-shadow: 3px 3px 11px 0px rgba(10, 245, 248, 0.56);
+            -webkit-box-shadow: 3px 3px 11px 0px rgba(10, 245, 248, 0.56);
+            -moz-box-shadow: 3px 3px 11px 0px rgba(10, 245, 248, 0.56);
+        }
+
+        .tin-4 {
+            box-shadow: 3px 3px 11px 0px rgba(255, 0, 30, 0.56);
+            -webkit-box-shadow: 3px 3px 11px 0px rgba(255, 0, 30, 0.56);
+            -moz-box-shadow: 3px 3px 11px 0px rgba(255, 0, 30, 0.56);
+
+        }
+
+        .tin-6 {
+            box-shadow: 3px 3px 11px 0px rgba(232, 255, 0, 0.56);
+            -webkit-box-shadow: 3px 3px 11px 0px rgba(232, 255, 0, 0.56);
+            -moz-box-shadow: 3px 3px 11px 0px rgba(232, 255, 0, 0.56);
+        }
+
+        .sound {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            /* color: #fce300ee; haa jara kami changla ahiiii pan op ahiii  */
+            color: #43fc00fa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back-1">
+        <img src="/js-1details-utlities/takashi-miyazaki-q2bHGRyJH64-unsplash.jpg" alt="" srcset="">
+    </div>
+    <div class="solid-1">
+        <div class="keys">
+            <div data-key="81" class="key">
+                <kbd>Q</kbd>
+            </div>
+            <div data-key="87" class="key">
+                <kbd>W</kbd>
+            </div>
+            <div data-key="69" class="key">
+                <kbd>E</kbd>
+            </div>
+            <div data-key="82" class="key">
+                <kbd>R</kbd>
+            </div>
+            <div data-key="84" class="key">
+                <kbd>T</kbd>
+            </div>
+            <div data-key="89" class="key">
+                <kbd>Y</kbd>
+            </div>
+            <div data-key="85" class="key">
+                <kbd>U</kbd>
+            </div>
+            <!-- <div data-keys="" class="key"></div> -->
+            <div data-key="73" class="key">
+                <kbd>I</kbd>
+            </div>
+            <div data-key="79" class="key">
+                <kbd>O</kbd>
+            </div>
+            <div data-key="80" class="key">
+                <kbd>P</kbd>
+            </div>
+        </div>
+        <div class="keys pop-1">
+            <div data-key="65" class="key tin-1">
+                <kbd>A</kbd>
+            </div>
+            <div data-key="83" class="key tin-3">
+                <kbd>S</kbd>
+            </div>
+            <div data-key="68" class="key tin-2">
+                <kbd>D</kbd>
+            </div>
+            <div data-key="70" class="key tin-1">
+                <kbd>F</kbd>
+            </div>
+            <div data-key="71" class="key tin-3">
+                <kbd>G</kbd>
+            </div>
+            <div data-key="72" class="key tin-2">
+                <kbd>H</kbd>
+            </div>
+            <div data-key="74" class="key tin-1">
+                <kbd>J</kbd>
+            </div>
+            <!-- <div data-keys="" class="key"></div> -->
+            <div data-key="75" class="key tin-3">
+                <kbd>K</kbd>
+            </div>
+            <div data-key="76" class="key tin-2">
+                <kbd>L</kbd>
+            </div>
+
+        </div>
+        <div class="keys pop-2">
+            <div data-key="90" class="key">
+                <kbd>Z</kbd>
+            </div>
+            <div data-key="88" class="key">
+                <kbd>X</kbd>
+            </div>
+            <div data-key="67" class="key">
+                <kbd>C</kbd>
+            </div>
+            <div data-key="86" class="key">
+                <kbd>V</kbd>
+            </div>
+            <div data-key="66" class="key">
+                <kbd>B</kbd>
+            </div>
+            <div data-key="78" class="key">
+                <kbd>N</kbd>
+            </div>
+            <div data-key="77" class="key">
+                <kbd>M</kbd>
+            </div>
+            <!-- <div data-keys="" class="key"></div> -->
+
+        </div>
+        <div class="keys pop-3">
+            <div data-key="32" class="key space-1">
+                <kbd class=""> </kbd>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <audio data-key="81" src="/js-1details-utlities/snare.wav"></audio>
+    <audio data-key="82" src="/js-1details-utlities/play-3.wav"></audio>
+    <audio data-key="87" src="/js-1details-utlities/play-7.wav"></audio>
+    <audio data-key="69" src="/js-1details-utlities/play-5.wav"></audio>
+    <audio data-key="82" src="/js-1details-utlities/kick.wav"></audio>
+    <audio data-key="84" src="/js-1details-utlities/openhat.wav"></audio>
+    <audio data-key="89" src="/js-1details-utlities/tink.wav"></audio>
+    <audio data-key="85" src="/js-1details-utlities/drum-2.wav"></audio>
+    <audio data-key="73" src="/js-1details-utlities/drum-2.wav"></audio>
+    <audio data-key="79" src="/js-1details-utlities/tune-0.wav"></audio>
+    <audio data-key="80" src="/js-1details-utlities/tom.wav"></audio>
+    <!-- ROW 2  -->
+    <audio data-key="65" src="/js-1details-utlities/play-3.wav"></audio>
+    <audio data-key="83" src="/js-1details-utlities/hihat.wav"></audio>
+    <audio data-key="68" src="/js-1details-utlities/kick.wav"></audio>
+    <audio data-key="32" src="/js-1details-utlities/Corey Gagne - Faded [THEY STOLE MY CAMERA].wav"></audio>
+    <audio data-key="71" src="/js-1details-utlities/play-8.wav"></audio>
+    <audio data-key="72" src="/js-1details-utlities/tune-0.wav"></audio>
+    <audio data-key="74" src="/js-1details-utlities/clap.wav"></audio>
+    <audio data-key="75" src="/js-1details-utlities/drum-2.wav"></audio>
+    <audio data-key="76" src="/js-1details-utlities/drum-1.wav"></audio>
+    <!-- ROW 3  -->
+    <audio data-key="90" src="/js-1details-utlities/play-8.wav"></audio>
+    <audio data-key="88" src="/js-1details-utlities/play-7.wav"></audio>
+    <audio data-key="67" src="/js-1details-utlities/play-6.wav"></audio>
+    <audio data-key="86" src="/js-1details-utlities/play-5.wav"></audio>
+    <audio data-key="66" src="/js-1details-utlities/play-4.wav"></audio>
+    <audio data-key="78" src="/js-1details-utlities/play-3.wav"></audio>
+    <audio data-key="77" src="/js-1details-utlities/play-2.wav"></audio>
+    <!-- sPACE  -->
+    <audio data-key="70" src="/js-1details-utlities/play-1.wav"></audio>
+
+    </div>
+    <script>
+        window.addEventListener('keydown', function (e) {
+            // console.log(e.keyCode)
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+            // console.log(audio);
+            if (!audio) return; //stop the function from running all together
+            audio.currentTime = 0; //rewind to start
+            audio.play();
+            // console.log(key);
+            // key.addClass('playing');
+            key.classList.add('playing');
+            // setTimeout(function(){
+
+            // }, 0.07);
+        });
+        function removeTransition(e) {
+            // console.log(e);
+            if (e.propertyName !== 'transform') return;
+            // console.log(e.propertyName)
+            // console.log(this);
+            this.classList.remove('playing');
+
+
+
+        }
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    </script>
+    <!-- yee zala Rutika kasa ahi bagun sang ha kaa me tee songs pan patvat ahiii  -->
+</body>
+
+</html>
